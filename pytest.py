@@ -1,4 +1,4 @@
-#!python2
+#!python3.4
 
 import sys
 from PySide.QtCore import Qt
@@ -19,5 +19,5 @@ if __name__ == '__main__':
 		myApp.exec_()
 		sys.exit()
 	except NameError:
-		print "Name Error:", sys.exc_info()[1]
+		print("Name Error:", sys.exc_info()[1])
 		pass

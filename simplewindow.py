@@ -1,4 +1,4 @@
-#!python2
+#!python3.4
 
 import sys
 import time
@@ -30,9 +30,9 @@ if __name__ == '__main__':
         myApp.exec_()
         sys.exit(0)
     except NameError:
-        print "Name Error", sys.exc_info()[1]
+        print("Name Error", sys.exc_info()[1])
     except SystemExit:
-        print "Closing Window..."
+        print("Closing Window...")
     except Exception:
-        print sys.exc_info()[1]
-        
+        print(sys.exc_info()[1])
+
