@@ -1,7 +1,7 @@
 #!python3.4
 
 import sys
-from PySide.QtGui import QApplication, QWidget, QIcon, QLabel
+from PySide.QtGui import QApplication, QWidget, QIcon, QLabel, QToolTip, QFont
 
 class SampleWindow(QWidget):
     """ Our main window class
@@ -12,6 +12,8 @@ class SampleWindow(QWidget):
         QWidget.__init__(self)
         self.setWindowTitle("Icon Sample")
         self.setGeometry(300, 300, 200, 150)
+        QToolTip.setFont(QFont("Decorative", 8, QFont.Bold))
+        self.setToolTip('Our Main Window')
         # self.setMinimumHeight(100)
         # self.setMinimumWidth(250)
         # self.setMaximumHeight(200)
@@ -26,18 +28,21 @@ class SampleWindow(QWidget):
         myLabel1 = QLabel('sample', self)
         pixmap1 = myIcon1.pixmap(50, 50, QIcon.Active, QIcon.On)
         myLabel1.setPixmap(pixmap1)
+        myLabel1.setToolTip('Active Icon')
 
         myIcon2 = QIcon('pyside_logo.png')
         myLabel2 = QLabel('sample', self)
         pixmap2 = myIcon2.pixmap(50, 50, QIcon.Disabled, QIcon.Off)
         myLabel2.setPixmap(pixmap2)
         myLabel2.move(50, 0)
+        myLabel2.setToolTip('Disabled Icon')
 
         myIcon3 = QIcon('pyside_logo.png')
         myLabel3 = QLabel('sample', self)
         pixmap3 = myIcon3.pixmap(50, 50, QIcon.Selected, QIcon.On)
         myLabel3.setPixmap(pixmap3)
         myLabel3.move(100, 0)
+        myLabel3.setToolTip('Selected Icon')
 
 
 if __name__ == '__main__':
